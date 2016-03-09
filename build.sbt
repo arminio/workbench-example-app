@@ -15,7 +15,10 @@ libraryDependencies ++= Seq(
   "com.lihaoyi" %%% "scalatags" % "0.5.4"
 )
 
+jsDependencies += "org.webjars.npm" % "konva" % "0.11.1" / "konva.js"
+
 bootSnippet := "example.ScalaJSExample().main(document.getElementById('canvas'));"
 
 updateBrowsers <<= updateBrowsers.triggeredBy(fastOptJS in Compile)
 
+skip in packageJSDependencies := false
